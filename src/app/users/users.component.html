@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-offset-3 col-lg-6">
+      <table class="table table-bordered">
+        <thead class="table-heading">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Country</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.name}}</td>
+          <td [ngStyle] = "{ 'background-color' : checkForCountry(user.country)}">{{user.age}}</td>
+          <td [ngClass] = "{'invert-color' : user.country == 'India'}">{{user.country}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

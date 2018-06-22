@@ -1,0 +1,38 @@
+<!--First lecture-->
+
+<!--{{title}}
+<input type="text" [(ngModel)]="title"/>
+
+<ul *ngFor="let num of arrayNum">
+  <li *ngIf="num%2 === 0; else odd">{{num}} - EVEN</li>
+  <ng-template #odd>
+    <li>{{num}} - ODD</li>
+  </ng-template>
+</ul>-->
+
+<app-users *ngIf="showUsers; else toggleUser" [users]="appUsers"></app-users>
+<ng-template #toggleUser>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-offset-4 col-lg-4">
+        <div class="text-center padding-15">Toggle to see users!</div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-offset-4 col-lg-4">
+      <div class="text-center padding-15">
+        <button class="btn btn-primary" (click)="_toggleUsers()">Click Me!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <button class="btn btn-primary" [disabled]="disableButton" (click)="toggleButton($event)">Toggle</button>
+</div>
+
+<img [src]="imageSrc"/>
